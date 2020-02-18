@@ -1,0 +1,436 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/redmond/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        p {
+            text-indent: 2em;
+        }
+
+        article {
+            line-height: 50%;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .show {
+            display: inline-block;
+        }
+          body {
+    color: whitesmoke;
+
+        }
+    </style>
+    <script>
+
+        function hideArticle() {
+
+            var h = document.getElementsByTagName("article");
+
+            for (i = 0; i < h.length; i++) {
+
+                h[i].className = "hidden";
+            }
+        }
+
+            function hideTable() {
+
+            var j = document.getElementsByTagName("table");
+
+            for (i = 0; i < j.length; i++) {
+
+                j[i].className = "hidden";
+            }
+
+        }           // Piilotetaan kaikki tagit "article" ja "table"
+
+        function show(iidee) {
+
+           
+
+            var s = document.getElementById(iidee);
+            s.className = "show";
+        }           // Näytetaan haluttu artikkeli
+    </script>
+
+
+    <script>
+        // Sektioneiden toiminnalisuus show ja hide
+        $(function () {
+            $("p").button();
+
+            $("#nhl").click(function () {
+                $("#sek1").show();
+                $("#sek2").hide();
+                $("#sek3").hide();
+                $("#sek4").hide();
+                $("#sek5").hide();
+                $('table').hide();
+                
+            });
+
+
+            $("#khl").click(function () {
+                $("#sek2").show();
+                $("#sek1").hide();
+                $("#sek3").hide();
+                $("#sek4").hide();
+                $("#sek5").hide();
+                $('table').hide();
+                
+                
+                
+            });
+
+
+            $("#liiga").click(function () {
+                $("#sek3").show();
+                $("#sek1").hide();
+                $("#sek2").hide();
+                $("#sek4").hide();
+                $("#sek5").hide();
+                $('table').hide();
+               
+            });
+
+            $("#shl").click(function () {
+                $("#sek4").show();
+                $("#sek1").hide();
+                $("#sek2").hide();
+                $("#sek3").hide();
+                $("#sek5").hide();
+                $('table').hide();
+
+            });
+
+            $("#nla").click(function () {
+                $("#sek5").show();
+                $("#sek1").hide();
+                $("#sek2").hide();
+                $("#sek3").hide();
+                $("#sek4").hide();
+                $('table').hide();
+
+            });
+        });
+    </script>
+
+    <script>
+        // NHL paragraph toiminnallisuus show ja hide
+        $(function () {
+
+            $("#sarjataulu1").click(function () {
+                $("#nhlt1").show();
+                $("#nhlt2").show();
+                $("#nhlt3").hide();
+                $("#nhlt4").hide();
+                $("#nhlt5").hide();
+                
+            });
+
+            $("#pisteporssi1").click(function () {
+                $("#nhlt3").show();
+                $("#nhlt1").hide();
+                $("#nhlt2").hide();
+                $("#nhlt4").hide();
+                $("#nhlt5").hide();
+            });
+
+            $("#Tulevat1").click(function () {
+                $("#nhlt4").show();
+                $("#nhlt2").hide();
+                $("#nhlt1").hide();
+                $("#nhlt3").hide();
+                $("#nhlt5").hide();
+            });
+            $("#Edellinen1").click(function () {
+                $("#nhlt5").show();
+                $("#nhlt3").hide();
+                $("#nhlt2").hide();
+                $("#nhlt1").hide();
+                $("#nhlt4").hide();
+            });
+
+
+        });
+
+    </script>
+
+    <script>
+        // KHL paragraphien toiminnallisuus show ja hide
+
+        $(function () {
+
+        $("#sarjataulu2").click(function () {
+            $("#khlt1").show();
+            $("#khlt2").show();
+            $("#khlt3").hide();
+            $("#khlt4").hide();
+            $("#khlt5").hide();
+
+        });
+
+        $("#pisteporssi2").click(function () {
+            $("#khlt3").show();
+            $("#khlt1").hide();
+            $("#khlt2").hide();
+            $("#khlt4").hide();
+            $("#khlt5").hide();
+        });
+
+        $("#Tulevat2").click(function () {
+            $("#khlt4").show();
+            $("#khlt2").hide();
+            $("#khlt1").hide();
+            $("#khlt3").hide();
+            $("#khlt5").hide();
+        });
+        $("#Edellinen2").click(function () {
+            $("#khlt5").show();
+            $("#khlt3").hide();
+            $("#khlt2").hide();
+            $("#khlt1").hide();
+            $("#khlt4").hide();
+        });
+
+        });
+
+    </script>
+
+    <script>
+
+        // Liiga paragraphien toiminnallisuus show ja hide
+        $(function () {
+
+            $("#sarjataulu3").click(function () {
+                $("#liigat1").show();
+                $("#liigat2").hide();
+                $("#liigat3").hide();
+                $("#liigat4").hide();
+                
+
+            });
+
+            $("#pisteporssi3").click(function () {
+                $("#liigat2").show();
+                $("#liigat1").hide();
+                $("#liigat3").hide();
+                $("#liigat4").hide();
+                
+            });
+
+            $("#Tulevat3").click(function () {
+                $("#liigat3").show();
+                $("#liigat1").hide();
+                $("#liigat2").hide();
+                $("#liigat4").hide();
+                
+            });
+            $("#Edellinen3").click(function () {
+                $("#liigat4").show();
+                $("#liigat1").hide();
+                $("#liigat2").hide();
+                $("#liigat3").hide();
+            });
+
+        });
+    </script>
+
+    <script>
+
+        // SHL paragraphien toiminnallisuus show ja hide
+        $(function () {
+
+            $("#sarjataulu4").click(function () {
+                $("#shlt1").show();
+                $("#shlt2").hide();
+                $("#shlt3").hide();
+                $("#shlt4").hide();
+
+
+            });
+
+            $("#pisteporssi4").click(function () {
+                $("#shlt2").show();
+                $("#shlt1").hide();
+                $("#shlt3").hide();
+                $("#shlt4").hide();
+
+            });
+
+            $("#Tulevat4").click(function () {
+                $("#shlt3").show();
+                $("#shlt1").hide();
+                $("#shlt2").hide();
+                $("#shlt4").hide();
+
+            });
+            $("#Edellinen4").click(function () {
+                $("#shlt4").show();
+                $("#shlt1").hide();
+                $("#shlt2").hide();
+                $("#shlt3").hide();
+            });
+
+        });
+
+    </script>
+
+    <script>
+
+        // NLA paragraphien toiminnallisuus show ja hide
+        $(function () {
+
+            $("#sarjataulu5").click(function () {
+                $("#nlat1").show();
+                $("#nlat2").hide();
+                $("#nlat3").hide();
+                $("#nlat4").hide();
+
+
+            });
+
+            $("#pisteporssi5").click(function () {
+                $("#nlat2").show();
+                $("#nlat1").hide();
+                $("#nlat3").hide();
+                $("#nlat4").hide();
+
+            });
+
+            $("#Tulevat5").click(function () {
+                $("#nlat3").show();
+                $("#nlat1").hide();
+                $("#nlat2").hide();
+                $("#nlat4").hide();
+
+            });
+            $("#Edellinen5").click(function () {
+                $("#nlat4").show();
+                $("#nlat1").hide();
+                $("#nlat2").hide();
+                $("#nlat3").hide();
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body onload="hideArticle(),hideTable()" style="background-image:url('Riistavedenkoulu.png')">
+    <p id="nhl" class="ui-button">Riistaveden koulu</p>
+    <p id="khl" > Meilahden koulu</p>
+    <p id="liiga" >Vehkalammin koulu</p>
+    <section>
+        <article id="sek1">
+            <header>
+                <h1>Riistaveden koulun varasto</h1>
+            </header>
+            <p id="sarjataulu1" class="ui-button">Hallinnoi varastoa</p>
+        </article>
+    </section>
+
+    <section>
+        <article id="sek2">
+            <header>
+                <h1>Meilahden koulun varasto</h1>
+            </header>
+            <p id="sarjataulu2" class="ui-button">Hallinnoi varastoa</p>
+        </article>
+    </section>
+
+    <section>
+        <article id="sek3">
+
+            <header>
+                <h1>Vehkalammin koulun varasto</h1>
+            </header>
+            <p id="sarjataulu3" class="ui-button">Hallinnoi varastoa</p>
+        </article>
+    </section>
+
+    <section>
+        <article id="sek4">
+            <header>
+                <h1>SHL</h1>
+            </header>
+            <p id="sarjataulu4" class="ui-button">Sarjataulukko</p>
+            <p id="pisteporssi4">Pistepörssi</p>
+            <p id="Tulevat4">Seuraava kierros</p>
+            <p id="Edellinen4">Edellinen kierros</p>
+        </article>
+    </section>
+
+    <section>
+        <article id="sek5">
+            <header>
+                <h1>NLA</h1>
+            </header>
+            <p id="sarjataulu5" class="ui-button">Sarjataulukko</p>
+            <p id="pisteporssi5">Pistepörssi</p>
+            <p id="Tulevat5">Seuraava kierros</p>
+            <p id="Edellinen5">Edellinen kierros</p>
+        </article>
+    </section>
+
+    <!--Varastotilanteet-->
+
+    <!--Riistaveden koulun varastotilanne-->
+    <table id="nhlt1">
+        <caption>Varastotilanne</caption>
+        <tr>
+            <th></th>
+            <th>Kokonaisia</th>
+            <th>Puolikkaita</th>
+            <th>Yhteensa</th>
+        </tr>
+        <tr>
+            <td>Vaneri123</td>
+            <td>10</td>
+            <td>15 </td>
+            <td>25</td>
+        </tr>
+    </table>
+    
+    <!--Meilahden koulun varastotilanne-->
+    <table id="khlt1">
+        <caption>Varastotilanne</caption>
+        <tr>
+            <th></th>
+            <th>Kokonaisia</th>
+            <th>Puolikkaita</th>
+            <th>Yhteensä</th>
+        </tr>
+        <tr>
+            <td>Vaneri123</td>
+            <td>1</td>
+            <td>2 </td>
+            <td>3</td>
+        </tr>
+    </table>
+    
+    <!--Vehkalammin koulun varastotilanne-->
+    <table id="liigat1">
+        <tr>
+            <th></th>
+            <th>Kokonaisia</th>
+            <th>Puolikkaita</th>
+            <th>Yhteensä</th>
+        </tr>
+        <tr>
+            <td>Vaneri321</td>
+            <td>17</td>
+            <td>53 </td>
+            <td>70</td>
+        </tr>     
+</body>
+</html>
