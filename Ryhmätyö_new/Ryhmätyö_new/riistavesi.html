@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+
+/* Varastotablen tyyli */
+
+table, th, td {
+padding: 10px;
+border: 1px solid black;
+border-collapse: collapse;
+}
+
+ /* LOGIN RUUDUN TYYLIMÄÄRITTELYT */ 
+ /* The Modal (background) */
+ .modal {
+          display: none; /* Hidden by default */
+          position: fixed; /* Stay in place */
+          z-index: 1; /* Sit on top */
+          left: 0;
+          top: 0;
+          width: 100%; /* Full width */
+          height: 100%; /* Full height */
+          overflow: auto; /* Enable scroll if needed */
+          background-color: rgb(0,0,0); /* Fallback color */
+          background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+          padding-top: 60px;
+        }
+        .modal-content {
+          background-color: #fefefe;
+          margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+        }
+       
+        button:hover {
+          opacity: 0.8;
+        }
+        
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+          width: auto;
+          padding: 10px 18px;
+          background-color: rgb(255, 255, 255);
+        }
+        
+        /* Center the image and position the close button */
+        .imgcontainer {
+          text-align: center;
+          margin: 24px 0 12px 0;
+          position: relative;
+        }
+        
+        img.avatar {
+          width: 40%;
+          border-radius: 50%;
+        }
+        
+        .container {
+          padding: 16px;
+        }
+        
+        span.psw {
+          float: right;
+          padding-top: 16px;
+        }
+        .close {
+          position: absolute;
+          right: 25px;
+          top: 0;
+          color: #000;
+          font-size: 35px;
+          font-weight: bold;
+        }
+        
+ /* LOGIN RUUDUN TYYLIMÄÄRITTELYT PÄÄTTYY*/ 
+
+        /* FOOTER alku*/
+
+        footer{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100px;
+            width: 100%;
+            overflow: hidden;
+        }
+        /* FOOTER loppu*/
+</style>
+</head>
+<body>
+  <nav class="w3-bar w3-black" style="padding:10px;">
+    <a href="riistavesi.html" class="w3-button w3-bar-item">Riistavesi</a>
+    <a href="meilahti.html" class="w3-button w3-bar-item">Meilahti</a>
+    <a href="vehkalammi.html" class="w3-button w3-bar-item">Vehkalammi</a>
+    <a style="float:right" href="#" class="w3-bar-item w3-button" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+  </nav>
+  <h1>Riistaveden varasto</h1>
+  <div id="id01" class="modal">  
+    <form class="modal-content animate" action="/action_page.php" method="post">
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <img src="img_avatar2.png" alt="Avatar" class="avatar">
+      </div> 
+      <div class="container">
+        <label for="uname"><b>Käyttäjä</b></label>
+        <input type="text" placeholder="Enter Username" name="uname" required>
+  
+        <label for="psw"><b>Salasana</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+          
+        <button type="submit">Kirjaudu</button>
+        <label>
+          <input type="checkbox" checked="checked" name="remember"> Remember me
+        </label>
+      </div>
+  
+      <div class="container" style="background-color:rgb(85, 85, 85)">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Peruuta</button>
+        <span class="psw" style="color: #fefefe;">unohtuiko <a href="#">salasana</a></span>
+      </div>
+    </form>
+  </div> 
+  <script>
+  var modal = document.getElementById('id01');
+  
+  // Login ruudun hide toiminnallisuus. Kun käyttäjä painaa "ruudun" ohi, se sulkeutuu
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
+  </script>
+
+<br>
+<h5> Varastosaldo </h5>
+<table id="myTable" width = "370">
+  <tr>
+    <td >Jotain</td>
+	 <td type = "number" contenteditable>100  </td>
+  </tr> 
+</table>
+<br>
+
+<input type="text" id="field1">
+<input type="number" id="field2"><br>
+<button onclick="myFunction()">Lisää</button>
+
+<script>
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  if(document.getElementById("field1").value && document.getElementById("field2").value ){
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  }
+  cell1.innerHTML = document.getElementById("field1").value;
+   cell2.innerHTML = document.getElementById("field2").value; 
+}
+</script>
+
+
+
+<footer class="w3-container w3-black w3-center w3-medium" >
+    <p>Ryhmä N varastonhallintasovellus 1.0</p>
+</footer>
+
+</body>
+</html> 
